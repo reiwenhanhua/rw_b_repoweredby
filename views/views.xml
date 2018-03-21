@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+      <!-- repoweredby START -->
+      <!-- 登录后，左下解菜单导航栏底部的Logo -->
+        <template id="rw_b_menu_secondary" inherit_id="web.menu_secondary">
+            <xpath expr="//div[@class='o_sub_menu_footer']" position="replace">
+                <div class="o_sub_menu_footer">
+                    Powered by <span style="color:#ff0000;"><a href="https://www.ruiwenhanhua.com" target="_blank"><span>RWHH</span></a></span>
+                </div>
+            </xpath>
+        </template>
+
+      <!-- 登录页面下方的Logo -->
+        <template id="rw_b_login_layout" inherit_id="web.login_layout">
+            <xpath expr="//a[@href='https://www.odoo.com']" position="replace">
+                <span style="color:#ff0000;"><a href="https://www.ruiwenhanhua.com" target="_blank">Powered by <span>RWHH</span></a></span>
+            </xpath>
+        </template>
+
+        <!-- menu top -->
+        <menuitem id="rw_b_repoweredby.menu_main" name="基本信息" sequence="300"/>
+        <!-- menu left -->
+        <menuitem id="rw_b_repoweredby.menu_main_left" name="基本信息管理" sequence="310"
+          parent="rw_b_repoweredby.menu_main"/>
+
+      <!-- 注释顶部菜单项中的支持信息
+      docker exec -it odoo_odoo_1 /bin/bash
+      sed -i '/data-menu="documentation"/d' /opt/odoo/sources/odoo/addons/web/static/src/xml/base.xml
+      sed -i '/data-menu="support"/d' /opt/odoo/sources/odoo/addons/web/static/src/xml/base.xml
+      sed -i '/data-menu="account"/d' /opt/odoo/sources/odoo/addons/web/static/src/xml/base.xml
+      -->
+      <!-- repoweredby END -->
+
+  </data>
+</odoo>
